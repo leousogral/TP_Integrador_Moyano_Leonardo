@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    color: #3C3C3C;
+    font-family: 'raleway', sans-serif;
+    width: 1100px;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+header{
+    display: flex;
+    height: 100px;
+    font-weight: 600;
+    background-color: #166E7A;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    height: 64px;
+    width: 64px;
+}
+header a img{
+    margin-left: 12px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+nav a{
+    margin: 10px;
+}
+nav{
+    margin-right: 30px;
+}
+main{
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+footer{
+    height: 150px;
+    background-color: #42724F;
+}
+#hero-banner{
+    width: 1100px;
+    height: 400px;
+    background-image: url(../img/hero-banner.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+}
+footer{
+    margin-top: 12px;
+}
+main section h1{
+    color: rgb(170, 157, 157);
+    margin-left: 120px;
+}
+#servicios article{
+    width: 290px;
+}
+#servicios{
+    background-color: #359613;
+    margin-top: 12px;
+    width: 1100px;
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#servicios h2{
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
