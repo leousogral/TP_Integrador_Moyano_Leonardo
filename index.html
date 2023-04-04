@@ -1,58 +1,143 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TP-Integrador</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
 
-        <header>
-            <a href="index.html">
-                <img src="img/mundo.png" alt="Logo Planeta">
-                Digital Planet
-            </a>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="empresa.html">Empresa</a>
-                <a href="tecnologia.html">Tecnologia</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </header>
-        <main>
-            <section id="hero-banner">
-                <h1>Your digital space.</h1>
-            </section>
-            <section id="servicios">
-                <article>
-                    <img src="img/figma1.png" alt="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TP-Integrador</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="img/mundo.png" alt="Logo Planeta">
+            Digital Planet
+        </a>
+        <nav class="menu">
+            <ul class="menu__links">
+                <li class="menu__item">
+                    <a href="#hero-banner" class="menu__link"><i class="fa-solid fa-house fa-beat fa-2xs"></i>&nbsp;&nbsp;Home</a>
+                           
+                </li>
+
+                <li class="menu__item menu__item--show">
+                    <a href="#" class="menu__link">Servicios <img src="img/arrow.svg" class="menu__arrow"></a>
+
+                    <ul class="menu__nesting">
+                        <li class="menu__inside">
+                            <a href="#firewal" class="menu__link menu__link--inside">Administración de Firewal</a>
+                        </li>
+                        <li class="menu__inside">
+                            <a href="#vpn" class="menu__link menu__link--inside">Servicio VPN</a>
+                        </li>
+                        <li class="menu__inside">
+                            <a href="#cyber" class="menu__link menu__link--inside">Cyber Seguridad</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__item  menu__item--show">
+                    <a href="#" class="menu__link">Projects <img src="img/arrow.svg" class="menu__arrow"></a>
+
+                    <ul class="menu__nesting">
+                        <li class="menu__inside">
+                            <a href="#" class="menu__link menu__link--inside">Projects 1</a>
+                        </li>
+                        <li class="menu__inside">
+                            <a href="#" class="menu__link menu__link--inside">Projects 2</a>
+                        </li>
+                        <li class="menu__inside">
+                            <a href="#" class="menu__link menu__link--inside">Projects 3</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__item">
+                    <a href="#contacto" class="menu__link">Contact</a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero-banner">
+            <h1>Tu espacio digital</h1>
+        </section>
+        <section id="firewal">
+            <article>
+                <img src="img/firewal.jpg" alt="">
+                <div>
                     <h2>Administración de Firewals</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident suscipit, est autem hic sequi beatae dolor alias reprehenderit sunt harum. Ad, libero molestias nostrum non dolore consequatur harum necessitatibus numquam!
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident suscipit, est autem hic
+                        sequi
+                        beatae dolor alias reprehenderit sunt harum. Ad, libero molestias nostrum non dolore consequatur
+                        harum necessitatibus numquam!
                     </p>
-                </article>
-                <article>
-                    <img src="img/figma2.png" alt="">
+                </div>
+            </article>
+        </section>
+        <section id="vpn">
+            <article>
+                <img src="img/vpn.jpg" alt="">
+                <div>
                     <h2>Servicio VPN</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem, repudiandae exercitationem dolore eius quo odio aspernatur molestias consequuntur cumque, incidunt a optio, repellendus ipsa odit ratione fugit ea nostrum.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus rem, repudiandae
+                        exercitationem dolore eius quo odio aspernatur molestias consequuntur cumque, incidunt a optio,
+                        repellendus ipsa odit ratione fugit ea nostrum.
                     </p>
-                </article>
-                <article>
-                    <img src="img/figma3.png" alt="">
+                </div>
+            </article>
+        </section>
+        <section id="cyber">
+            <article>
+                <img src="img/cyber.jpg" alt="">
+                <div>
                     <h2>Cyberseguridad</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quo esse aliquid explicabo doloribus earum ratione cumque veritatis quidem dignissimos. Et nemo autem reprehenderit eveniet amet fuga sit. Eius, eum.</p>
-                </article>
-            </section>
-        </main>
-        <footer>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quo esse aliquid explicabo
+                        doloribus
+                        earum ratione cumque veritatis quidem dignissimos. Et nemo autem reprehenderit eveniet amet fuga
+                        sit. Eius, eum.
+                    </p>
+                </div>
+            </article>
+        </section>
+        <section id="contacto">
+            <h2>Aca va el formulario de contacto</h2>
+        </section>
+    </main>
+    <footer>
 
-        </footer>
+    </footer>
 
+    <script>
+        /*$(function () {
+            $ds = $('#firewal img');
+            $ds.hide().eq(0).show();
+            setInterval(function () {
+                $ds.filter(':visible').fadeOut(function () {
+                    var $div = $(this).next('img');
+                    if ($div.length == 0) {
+                        $ds.eq(0).fadeIn();
+                    } else {
+                        $div.fadeIn();
+                    }
+                });
+            }, 2000);
+        });*/
+    </script>
+    <script src=""></script>
+</body>
 
-        <script src="" async defer></script>
-    </body>
 </html>

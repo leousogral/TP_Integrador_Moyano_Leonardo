@@ -8,20 +8,28 @@
 body{
     color: #3C3C3C;
     font-family: 'raleway', sans-serif;
-    width: 1100px;
     margin: auto;
 }
 a{
     text-decoration: none;
     color: white;
+    opacity: 0.7;
+}
+a:hover{
+	opacity: 1;
 }
 header{
-    display: flex;
-    height: 100px;
+    position: fixed;
     font-weight: 600;
-    background-color: #166E7A;
-    justify-content: space-between;
-    align-items: center;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+	padding: 35px 100px 0;
 }
 header img{
     height: 64px;
@@ -29,27 +37,15 @@ header img{
 }
 header a img{
     margin-left: 12px;
-    margin-right: 8px;
+    margin-right: 8x;
     vertical-align: middle;
-}
-nav a{
-    margin: 10px;
-}
-nav{
-    margin-right: 30px;
-}
-main{
-    margin-top: 12px;
-    margin-bottom: 12px;
-
 }
 footer{
     height: 150px;
     background-color: #42724F;
 }
 #hero-banner{
-    width: 1100px;
-    height: 400px;
+    height: 650px;
     background-image: url(../img/hero-banner.jpg);
     background-size: cover;
     background-position: center center;
@@ -63,20 +59,30 @@ main section h1{
     color: rgb(170, 157, 157);
     margin-left: 120px;
 }
-#servicios article{
-    width: 290px;
-}
-#servicios{
-    background-color: #359613;
-    margin-top: 12px;
-    width: 1100px;
-    height: 500px;
+section article{
+    height: 60%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+section article img{
+    margin-left: 50px;
+    
+}
+section article div{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+section{
+    background-color: #dfdfdf;
+    margin-top: 12px;
+    height: 300px;
+    display: flex;
     align-items: center;
 }
-#servicios h2{
+section article h2{
     font-size: 16px;
     margin-top: 12px;
     margin-bottom: 12px;
+    color: mediumblue;
 }
