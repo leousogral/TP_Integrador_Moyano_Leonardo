@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
@@ -26,12 +27,14 @@
         <nav class="menu">
             <ul class="menu__links">
                 <li class="menu__item">
-                    <a href="#hero-banner" class="menu__link"><i class="fa-solid fa-house fa-2xs"></i>&nbsp;&nbsp;Home</a>
-                           
+                    <a href="#hero-banner" class="menu__link"><i
+                            class="fa-solid fa-house fa-2xs"></i>&nbsp;&nbsp;Home</a>
                 </li>
 
                 <li class="menu__item menu__item--show">
-                    <a href="#" class="menu__link"><i class="fa-solid fa-network-wired fa-beat-fade fa-2xs"></i>&nbsp;&nbsp;Servicios <img src="img/arrow.svg" class="menu__arrow"></a>
+                    <a href="#" class="menu__link"><i
+                            class="fa-solid fa-network-wired fa-beat-fade fa-2xs"></i>&nbsp;&nbsp;Servicios <img
+                            src="img/arrow.svg" class="menu__arrow"></a>
 
                     <ul class="menu__nesting">
                         <li class="menu__inside">
@@ -47,7 +50,9 @@
                 </li>
 
                 <li class="menu__item  menu__item--show">
-                    <a href="#" class="menu__link"><i class="fa-solid fa-diagram-project fa-2xs"></i>&nbsp;&nbsp;Projects<img src="img/arrow.svg" class="menu__arrow"></a>
+                    <a href="#" class="menu__link"><i
+                            class="fa-solid fa-diagram-project fa-2xs"></i>&nbsp;&nbsp;Projects<img src="img/arrow.svg"
+                            class="menu__arrow"></a>
 
                     <ul class="menu__nesting">
                         <li class="menu__inside">
@@ -63,7 +68,8 @@
                 </li>
 
                 <li class="menu__item">
-                    <a href="#contacto" class="menu__link"><i class="fa-regular fa-address-card fa-2xs"></i>&nbsp;&nbsp;Contact</a>
+                    <a href="#contacto" class="menu__link"><i
+                            class="fa-regular fa-address-card fa-2xs"></i>&nbsp;&nbsp;Contact</a>
                 </li>
 
             </ul>
@@ -71,7 +77,8 @@
     </header>
     <main>
         <section id="hero-banner">
-            <h1>Tu espacio digital</h1>
+            <h1 class="animate__animated animate__pulse animate__infinite 	infinite">Tu espacio digital</h1>
+
         </section>
         <section id="firewal">
             <article>
@@ -102,7 +109,7 @@
         </section>
         <section id="cyber">
             <article>
-                <img src="img/cyber.jpg" alt="">
+                <img src="img/cyber1.jpg" alt="">
                 <div>
                     <h2>Cyberseguridad</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quo esse aliquid explicabo
@@ -114,11 +121,48 @@
             </article>
         </section>
         <section id="contacto">
-            <h2>Aca va el formulario de contacto</h2>
+            <h2>Contacto</h2>
+            <div class="form">
+                <span class="form__title"> Contactenos</span>
+                <form action=" ">
+                    <div class="form__input">
+                        <i class="fa-regular fa-user"></i>
+                        <input type="text" placeholder="Nombre" id="name">
+                        <span class="bar"></span>
+
+                    </div>
+                    <div class="form__input">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Email" id="email">
+                        <span class="bar"></span>
+
+                    </div>
+                    <div class="form__input">
+                        <i class="fa-solid fa-unlock"></i>
+                        <input type="password" placeholder="Contraseña" id="name">
+                        <span class="bar"></span>
+
+                    </div>
+                    <div class="form__input">
+                        <i class="fa-solid fa-unlock"></i>
+                        <input type="password" placeholder="Confime contraseña" id="name">
+                        <span class="bar"></span>
+
+                    </div>
+                    <button type="submit" class="form__button">Sign up</button>
+                    <span class="form__switch"> ¿Ya tienes una cuenta? <a href="#"> Login </a>
+                    </span>
+
+                </form>
         </section>
     </main>
     <footer>
-
+        <ul>
+            <li><a href="#"><i class="fa-brands fa-square-twitter fa-beat"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook fa-beat-fade"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-github fa-spin-pulse"></i></a></li>
+        </ul>
+        <p>&copy; March 2023<br>Example FlexBox Layout </p>
     </footer>
 
     <script>
@@ -135,7 +179,26 @@
                     }
                 });
             }, 2000);
-        });*/
+        });
+
+        var textoMaq = document.getElementById('maquina');
+        console.log(textoMaq.textContent)
+        writing(textoMaq.textContent);
+
+        function writing(textoMaq) {
+            let text = textoMaq.toString();
+            let arrFromStr = text.split('');
+            let i = 0;
+            let printStr = setInterval(() => {
+                textoMaq.innerHTML += arrFromStr[i];
+                i++;
+
+                if(i === arrFromStr.length -1){
+                    clearInterval(printStr);
+                }
+            }, 500);
+        }*/
+
     </script>
     <script src=""></script>
 </body>
