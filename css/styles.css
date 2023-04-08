@@ -19,6 +19,13 @@ a:hover{
 	opacity: 1;
 }
 
+#show{
+    display: flex;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
 /*----------
  	Header
 ------------*/
@@ -77,8 +84,9 @@ section article{
     justify-content: space-between;
 }
 section article img{
-    margin-left: 50px;
-    
+    margin: 50px;
+    width: 100%;
+    max-width: 500px;
 }
 section article div{
     margin-left: 50px;
@@ -88,7 +96,6 @@ section article div{
 section{
     background-color: #a59b9b34;
     margin-top: 12px;
-    height: 300px;
     display: flex;
     align-items: center;
 }
