@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="shortcut icon" href="img/mundo.ico"" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <link rel=" stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -22,7 +22,7 @@
 
     <header>
         <a href="index.html">
-            <img src="img/mundo.png" alt="Logo Planeta">
+            <img src="img/mundo.png" alt="Logo Planeta" id="logo">
             Digital Planet
         </a>
         <div id="show"></div>
@@ -122,7 +122,6 @@
             </article>
         </section>
         <section id="contacto">
-            <h2>Contacto</h2>
             <div class="form">
                 <span class="form__title"> Contactenos</span>
                 <form action=" ">
@@ -167,6 +166,36 @@
     </footer>
 
     <script>
+        $(document).ready(function () {
+            var $header = $('header');
+            var $div = $('header div');
+            var $nav = $('header nav');
+            var $a = $('header a');
+            var previousScroll = 0;
+            $(window).scroll(function (event) {
+                var scroll = $(this).scrollTop();
+                if (scroll > previousScroll && scroll > 600) {
+                    $header.addClass('headerOnOff');
+                    $header.removeClass('bgcolor');
+                } else {
+                    $header.removeClass('headerOnOff');
+                    if (scroll < previousScroll && scroll > 600) {
+                        $header.addClass('bgcolor');
+                        $div.fadeOut();
+                        $nav.fadeOut();
+                        $a.fadeOut();
+                    }
+                    if(scroll < previousScroll && scroll < 600){
+                        $header.removeClass('bgcolor');
+                        $div.fadeIn();
+                        $nav.fadeIn();
+                        $a.fadeIn();
+                    }
+                }
+                previousScroll = scroll;
+            });
+
+        });
         /*$(function () {
             $ds = $('#firewal img');
             $ds.hide().eq(0).show();
