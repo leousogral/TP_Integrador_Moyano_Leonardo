@@ -126,22 +126,22 @@
         <section id="contacto">
             <div class="form">
                 <span class="form__title"> Contactenos</span>
-                <form action="">
+                <form id="form_contact">
                     <div class="form__input">
                         <i class="fa-solid fa-user">&nbsp;&nbsp;</i>
-                        <input type="text" placeholder="Ingrese su nombre" id="name" class="form-control">
+                        <input type="text" placeholder="Ingrese su nombre" id="name" name="name" class="form-control">
                         <span class="bar"></span>
 
                     </div>
                     <div class="form__input">
                         <i class="fa-solid fa-envelope">&nbsp;&nbsp;</i>
-                        <input type="email" placeholder="Ingrese su correo electronico" id="email" class="form-control">
+                        <input type="email" placeholder="Ingrese su correo electronico" id="email" name="email" class="form-control">
                         <span class="bar"></span>
 
                     </div>
                     <div class="form__input">
                         <i class="fa-solid fa-phone">&nbsp;&nbsp;</i>
-                        <input type="text" placeholder="Ingrese su número de teléfono" id="tel" class="form-control">
+                        <input type="text" placeholder="Ingrese su número de teléfono" id="tel" name="tel" class="form-control">
                         <span class="bar"></span>
 
                     </div>
@@ -204,7 +204,9 @@
         }*/
 
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="js/client-api.js"></script>
+    <script src="js/form_contact.js"></script>
 </body>
 
 </html>
