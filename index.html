@@ -14,8 +14,10 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
             <img src="img/mundo.png" alt="Logo Planeta" id="logo">
             Digital Planet
         </a>
-        <div id="show"></div>
+        <div id="showApi"></div>
         <nav class="menu">
             <ul class="menu__links">
                 <li class="menu__item">
@@ -124,78 +126,50 @@
         <section id="contacto">
             <div class="form">
                 <span class="form__title"> Contactenos</span>
-                <form action=" ">
+                <form action="">
                     <div class="form__input">
-                        <i class="fa-regular fa-user"></i>
-                        <input type="text" placeholder="Nombre" id="name">
+                        <i class="fa-solid fa-user">&nbsp;&nbsp;</i>
+                        <input type="text" placeholder="Ingrese su nombre" id="name" class="form-control">
                         <span class="bar"></span>
 
                     </div>
                     <div class="form__input">
-                        <i class="fa-regular fa-envelope"></i>
-                        <input type="email" placeholder="Email" id="email">
+                        <i class="fa-solid fa-envelope">&nbsp;&nbsp;</i>
+                        <input type="email" placeholder="Ingrese su correo electronico" id="email" class="form-control">
                         <span class="bar"></span>
 
                     </div>
                     <div class="form__input">
-                        <i class="fa-solid fa-unlock"></i>
-                        <input type="password" placeholder="Contraseña" id="name">
+                        <i class="fa-solid fa-phone">&nbsp;&nbsp;</i>
+                        <input type="text" placeholder="Ingrese su número de teléfono" id="tel" class="form-control">
                         <span class="bar"></span>
 
                     </div>
-                    <div class="form__input">
-                        <i class="fa-solid fa-unlock"></i>
-                        <input type="password" placeholder="Confime contraseña" id="name">
+                    <div class="form__textarea">
+                        <i class="fa-solid fa-message">&nbsp;&nbsp;</i>
+                        <textarea name="mensaje" id="mensaje" cols="20" rows="3" placeholder="Ingrese un comentario" class="form-control"></textarea>
                         <span class="bar"></span>
 
                     </div>
-                    <button type="submit" class="form__button">Sign up</button>
-                    <span class="form__switch"> ¿Ya tienes una cuenta? <a href="#"> Login </a>
-                    </span>
-
+                    <div>
+                        <button type="submit" class="form__button">Enviar</button>
+                    </div>
                 </form>
         </section>
     </main>
     <footer>
-        <ul>
-            <li><a href="#"><i class="fa-brands fa-square-twitter fa-beat"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-facebook fa-beat-fade"></i></a></li>
-            <li><a href="#"><i class="fa-brands fa-github fa-spin-pulse"></i></a></li>
-        </ul>
-        <p>&copy; March 2023<br>Example FlexBox Layout </p>
+        <div id="mapa"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d90957.05563902196!2d-58.48468878293564!3d-34.60457907798242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses!2sar!4v1681136815416!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div id="redes">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-square-twitter fa-beat"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-facebook fa-beat-fade"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-github fa-spin-pulse"></i></a></li>
+            </ul>
+            <p>&copy; March 2023&nbsp;Digital Planet </p>
+        </div>
     </footer>
 
     <script>
-        $(document).ready(function () {
-            var $header = $('header');
-            var $div = $('header div');
-            var $nav = $('header nav');
-            var $a = $('header a');
-            var previousScroll = 0;
-            $(window).scroll(function (event) {
-                var scroll = $(this).scrollTop();
-                if (scroll > previousScroll && scroll > 600) {
-                    $header.addClass('headerOnOff');
-                    $header.removeClass('bgcolor');
-                } else {
-                    $header.removeClass('headerOnOff');
-                    if (scroll < previousScroll && scroll > 600) {
-                        $header.addClass('bgcolor');
-                        $div.fadeOut();
-                        $nav.fadeOut();
-                        $a.fadeOut();
-                    }
-                    if(scroll < previousScroll && scroll < 600){
-                        $header.removeClass('bgcolor');
-                        $div.fadeIn();
-                        $nav.fadeIn();
-                        $a.fadeIn();
-                    }
-                }
-                previousScroll = scroll;
-            });
-
-        });
         /*$(function () {
             $ds = $('#firewal img');
             $ds.hide().eq(0).show();

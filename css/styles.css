@@ -19,13 +19,6 @@ a:hover{
 	opacity: 1;
 }
 
-#show{
-    display: flex;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px;
-}
-
 /*----------
  	Header
 ------------*/
@@ -51,7 +44,8 @@ header{
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
-	padding: 35px 100px 0;
+	padding: 35px 8px 0;
+    font-size: 15px;
 }
 header img{
     height: 64px;
@@ -62,11 +56,21 @@ header a img{
     margin-right: 8x;
     vertical-align: middle;
 }
-footer{
-    height: 150px;
-    background-color: #42724F;
+
+header a{
+    color: white;
+    font-size: 15px;
 }
 
+#showApi{
+    display: flex;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#showApi h3{
+    font-size: 18px;
+}   
 /*------------------
  	hero-banner
 -------------------*/
@@ -80,14 +84,17 @@ footer{
     align-items: center;
 }
 
+#hero-banner h1{
+    color: rgb(170, 157, 157);
+    margin-left: 150px;
+    font-size: 30px;
+}
+
 /*----------------
  	Section
 ------------------*/
 
-main section h1{
-    color: rgb(170, 157, 157);
-    margin-left: 120px;
-}
+
 section article{
     height: 60%;
     display: flex;
@@ -99,7 +106,7 @@ section article img{
     max-width: 500px;
 }
 section article div{
-    margin-left: 50px;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
@@ -116,22 +123,25 @@ section article h2{
     color: mediumblue;
 }
 
+
 /*----------------
  	Formularios
 ------------------*/
 
+#contacto{
+    height: 1000px;
+}
+
 .form{
     position:relative;
-    top:10px;
-    left: 20px;    
-    max-width: 40rem;
-    padding: 10rem 0;
+    width: 700px;
+    padding: 8rem 0;
     color: #fff;
     background-color:#fff;
     border-radius:1rem;
     box-shadow: 0 1px 1 rem rgba(0,0,0, .1);
     isolation: isolate;
-   margin: auto;
+    margin: auto;
 }
 
 .form::before{
@@ -141,14 +151,14 @@ section article h2{
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to left, rgba(0,0,0, .1), rgb(0, 83, 5));
+    background: linear-gradient( blue, pink);
     border-radius: 1rem 1rem 100% 100%;
     z-index: -1;
 }
 
 .form__title{
     position:absolute;
-    color: rgb(0, 83, 5);
+    color: rgb(65, 104, 211);
     top: 2.5em;
     left: 50%;
     transform: translateX(-50%);
@@ -161,17 +171,29 @@ section article h2{
     background-color: inherit;
 
 }
+
 .form__input{
     position: relative;
     display:flex;
     align-items: baseline;
     margin: 0 auto;
 }
+input::placeholder {
+    text-align: center;
+    line-height: 100px;/* Centrado vertical */
+  }
+
+textarea::placeholder {
+    text-align: center;
+    line-height: 20px;/* Centrado vertical */
+}
 
 .form__input{
     font-size: 25px;
     margin: 1rem;
-    color:rgb(0, 83, 5);
+    color:rgb(65, 104, 211);
+    font-size: 1.2em;
+    font-style: italic;
 }
 
 .form__input input{
@@ -179,40 +201,42 @@ section article h2{
     width: 100%;
     font:inherit;
     padding: 1rem 0;
-    border: none;
+    border-radius:3rem;
+    outline: none;
+    color: green;
+}
+
+
+.form__textarea{
+    position: relative;
+    display:flex;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+.form__textarea{
+    font-size: 25px;
+    margin: 1rem;
+    color:rgb(65, 104, 211);
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.form__textarea textarea{
+    position: relative;
+    width: 100%;
+    font:inherit;
+    padding: 1rem 0;
+    border-radius:1rem;
     outline: none;
 }
 
-.form__input bar{
-    position:absolute;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(207, 21, 21, 0.1);
-    width: 100%;
-    height: 1px;
-}
-
-.form__input .bar::before{
-    content: "";
-    position: absolute;
-    background-color:rgb(0, 83, 5) ;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform .5s;
-
-}
-
-.form__input>input:focus+ .bar::before{
-    transform: scaleX(1);
-}
 
 .form__button{
     display: block;
     margin: 2.5rem auto 3rem;
     padding: 1rem 5rem;
-    background: linear-gradient(to left, rgb(0, 83, 5), rgb(3, 3, 3));
+    background: linear-gradient(to left, blue, pink);
     color: #fff;
     font: inherit;
     border: .5rem solid #fff;
@@ -223,7 +247,7 @@ section article h2{
 }
 
 .form__button:hover{
-    background: linear-gradient(to left, rgba(0,0,0, .1), rgb(0, 83, 5));
+    background: linear-gradient(blue, rgb(146, 120, 140));
 }
 
 .form__switch{
@@ -250,23 +274,27 @@ section article h2{
 
 footer{
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	color: #fff;
-	background-color: #3e4c5b;
-	padding: 30px 0;
+    justify-content: space-around;
+    align-items: center;
+    height: 250px;
+    background-color: #879399;
 }
 
-footer ul{
-	display: flex;
+#redes p{
+    text-align: center;
+}
+
+#redes ul{
+    display: flex;
 	margin-bottom: 25px;
 	font-size: 32px;
     list-style: none;
 }
+
 footer ul li a{
     margin: 20px;
 }
+
 footer ul li{
 	margin: 0 8px;	
 }
@@ -284,10 +312,20 @@ footer p{
 	font-size: 14px;
 	color: rgba(255,255,255,0.6);
 	margin-bottom: 10px;
+    margin-left: 35px;
 }
 
 footer p a{
 	color: #fff;
+}
+/*----------------
+ 	Mapa
+------------------*/
+
+#mapa iframe{
+    width: 400px;
+    height: 200px;
+    margin-left: 20px;
 }
 
 /*------------------
