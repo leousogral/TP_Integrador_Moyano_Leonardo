@@ -154,7 +154,7 @@
                     </div>
                     <div class="form__select">
                         <i class="fa-solid fa-message">&nbsp;&nbsp;</i>
-                        <select class="form-control" name="services[]" id="services" multiple="multiple">
+                        <select class="form-control" name="services[]" id="services" multiple="multiple" data-placeholder="Seleccione uno o mas servicios">
                             <option value="firewal">Firewal</option>
                             <option value="vpn">VPN</option>
                             <option value="cyber">Cyberseguridad</option>
@@ -192,12 +192,6 @@
     </footer>
 
     <script>
-        $(document).ready(function () {
-            $('#services').select2({
-                placeholder: "Puede seleccionar uno o varios servicios",
-                allowClear: true
-            });
-        });
         /*$(function () {
             $ds = $('#firewal img');
             $ds.hide().eq(0).show();

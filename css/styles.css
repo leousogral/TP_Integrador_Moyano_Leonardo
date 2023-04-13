@@ -172,12 +172,6 @@ section article h2{
 
 }
 
-.form__input{
-    position: relative;
-    display:flex;
-    align-items: baseline;
-    margin: 0 auto;
-}
 input::placeholder {
     text-align: center;
     line-height: 100px;/* Centrado vertical */
@@ -188,8 +182,21 @@ textarea::placeholder {
     line-height: 20px;/* Centrado vertical */
 }
 
+::placeholder {
+    font-style: italic;
+    font-size: 18px;
+    font-family: 'Raleway';
+ }
+ 
 .validacionOK{
     color: rgb(16, 247, 16);
+}
+
+.form__input{
+    position: relative;
+    display:flex;
+    align-items: baseline;
+    margin: 0 auto;
 }
 
 .form__input{
@@ -240,6 +247,7 @@ textarea::placeholder {
     display:flex;
     align-items: baseline;
     margin: 0 auto;
+    font-style: italic;
 }
 
 .form__select{

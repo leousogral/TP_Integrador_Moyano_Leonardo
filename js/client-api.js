@@ -39,7 +39,7 @@ function sendRequest() {
             $("#showApi").html(datos);
         },
         complete: function () {
-            /* Se actualiza cada en 60 segundos */
+            /* Se actualiza cada 60 segundos */
             setTimeout(function () {
                 sendRequest();
             }, 60000);

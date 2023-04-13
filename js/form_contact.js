@@ -1,23 +1,29 @@
-$("#form_contact").validate({
-    rules: {
-        name: {
-            required: true,
-            minlength: 3
-        },
-        email: {
-            required: true,
-            email: true
-        },
-        tel: {
-            required: true,
-            number: true,
-            minlength: 10
-        },
-        'servicios[]': {
-            required:true
-          },
-        mensaje: {
-            required: true,
+$(document).ready(function () {
+    $('#services').select2();
+
+    var services = document.querySelector("#services");
+
+    console.log(services)
+    $("#form_contact").validate({
+        rules: {
+            name: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            tel: {
+                required: true,
+                number: true,
+                minlength: 10
+            },
+            'services[]': {
+                required: true,
+            },
+            mensaje: {
+                required: true,
             maxlength: 300
         }
     },
@@ -35,8 +41,8 @@ $("#form_contact").validate({
             number: "Solo puede ingresar números",
             minlength: "Como mínimo 10 números"
         },
-        'servicios[]': {
-            required: "aspkdjaskldfjasldkfjasodkfasldkfjasl{dkjfñlaskdfñlaskdfjl"
+        'services[]': {
+            required: "Debe seleccionar alguno o mas de un servicio",
         },
         mensaje: {
             required: "Debe ingresar un comentario",
@@ -47,4 +53,5 @@ $("#form_contact").validate({
         div.addClass("validacionOK").text("!Correcto¡");
     },
     errorElement: 'div'
+});
 });
