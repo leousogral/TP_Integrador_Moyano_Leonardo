@@ -235,6 +235,29 @@ textarea::placeholder {
     outline: none;
 }
 
+.form__select{
+    position: relative;
+    display:flex;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+.form__select{
+    font-size: 25px;
+    margin: 1rem;
+    color:rgb(65, 104, 211);
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.form__select select{
+    position: relative;
+    width: 100%;
+    font:inherit;
+    padding: 1rem 0;
+    border-radius:1rem;
+    outline: none;
+}
 
 .form__button{
     display: block;
