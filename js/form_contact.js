@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    $('#services').select2();
 
     var services = document.querySelector("#services");
 
@@ -42,16 +41,16 @@ $(document).ready(function () {
             minlength: "Como mínimo 10 números"
         },
         'services[]': {
-            required: "Debe seleccionar alguno o mas de un servicio",
+            required: "Debe seleccionar al menos uno o mas servicios",
         },
         mensaje: {
             required: "Debe ingresar un comentario",
             maxlength: "El mensaje debe tener menor a 300 caracteres"
         }
     },
-    success: function(div) {
-        div.addClass("validacionOK").text("!Correcto¡");
+    success: function(span) {
+        span.addClass("validacionOK").text("!Correcto¡");
     },
-    errorElement: 'div'
+    errorElement: 'span'
 });
 });

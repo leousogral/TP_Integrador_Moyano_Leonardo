@@ -129,13 +129,12 @@ section article h2{
 ------------------*/
 
 #contacto{
-    height: 1000px;
+    padding: 10px;
 }
 
 .form{
     position:relative;
     width: 700px;
-    padding: 8rem 0;
     color: #fff;
     background-color:#fff;
     border-radius:1rem;
@@ -144,22 +143,10 @@ section article h2{
     margin: auto;
 }
 
-.form::before{
-    content: "Formulario de Contacto";
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient( blue, pink);
-    border-radius: 1rem 1rem 100% 100%;
-    z-index: -1;
-}
-
 .form__title{
     position:absolute;
+    margin-bottom: 20px;
     color: rgb(65, 104, 211);
-    top: 2.5em;
     left: 50%;
     transform: translateX(-50%);
     font-size: 40px;
@@ -194,14 +181,12 @@ textarea::placeholder {
 
 .form__input{
     position: relative;
-    display:flex;
     align-items: baseline;
     margin: 0 auto;
 }
 
 .form__input{
     font-size: 25px;
-    margin: 1rem;
     color:rgb(65, 104, 211);
     font-size: 1.2em;
     font-style: italic;
@@ -211,16 +196,13 @@ textarea::placeholder {
     position: relative;
     width: 100%;
     font:inherit;
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     border-radius:3rem;
     outline: none;
-    color: green;
 }
-
 
 .form__textarea{
     position: relative;
-    display:flex;
     align-items: baseline;
     margin: 0 auto;
 }
@@ -244,7 +226,6 @@ textarea::placeholder {
 
 .form__select{
     position: relative;
-    display:flex;
     align-items: baseline;
     margin: 0 auto;
     font-style: italic;
