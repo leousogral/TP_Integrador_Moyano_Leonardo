@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
-    var services = document.querySelector("#services");
+    $('#services').select2({
+        allowClear: true,
+        theme: "classic"
+    });
 
-    console.log(services)
     $("#form_contact").validate({
         rules: {
             name: {
@@ -23,34 +25,72 @@ $(document).ready(function () {
             },
             mensaje: {
                 required: true,
-            maxlength: 300
+                maxlength: 300
+            }
+        },
+        messages: {
+            name: {
+                required: "Debe ingresar un nombre",
+                minlength: "El nombre debe tener almenos 3 caracteres"
+            },
+            email: {
+                required: "Debe ingresar un email",
+                email: "Ingrese un correo valido"
+            },
+            tel: {
+                required: "Debe ingresar un número de teléfono",
+                number: "Solo puede ingresar números",
+                minlength: "Como mínimo 10 números"
+            },
+            'services[]': {
+                required: "Debe seleccionar al menos uno o mas servicios",
+            },
+            mensaje: {
+                required: "Debe ingresar un comentario",
+                maxlength: "El mensaje debe tener menor a 300 caracteres"
+            }
+        },
+        success: function (span) {
+            span.addClass("validacionOK").text("!Correcto¡");
+        },
+        errorElement: 'span'
+    });
+
+    $("#resumen").hide();
+
+    $("#enviar").click(function () {
+
+        if ($("#form_contact").valid() == false) {
+            return;
         }
-    },
-    messages: {
-        name: {
-            required: "Debe ingresar un nombre",
-            minlength: "El nombre debe tener almenos 3 caracteres"
-        },
-        email: {
-            required: "Debe ingresar un email",
-            email: "Ingrese un correo valido"
-        },
-        tel: {
-            required: "Debe ingresar un número de teléfono",
-            number: "Solo puede ingresar números",
-            minlength: "Como mínimo 10 números"
-        },
-        'services[]': {
-            required: "Debe seleccionar al menos uno o mas servicios",
-        },
-        mensaje: {
-            required: "Debe ingresar un comentario",
-            maxlength: "El mensaje debe tener menor a 300 caracteres"
-        }
-    },
-    success: function(span) {
-        span.addClass("validacionOK").text("!Correcto¡");
-    },
-    errorElement: 'span'
-});
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var tel = $("#tel").val();
+        var mensaje = $("#mensaje").val();
+
+        $("#mostrar_resumen").html(`<strong>Nombre: </strong>${name}<br><br>
+                        <strong>Email: </strong>${email}<br><br>
+                        <strong>Telefono: </strong>${tel}<br><br>
+                        <strong>Mensaje: </strong>${mensaje}`);
+
+        $("#contacto").hide();
+        $("#resumen").fadeIn("fast");
+    });
+
+    //agregamos un evento click al boton "atras"      
+    $("#botonAtras").click(function () {
+
+        //$("label.error").css("display", "none");
+
+        // ocultar el segundo formulario y  vuelve a mostrar el primero
+        $("#resumen").hide();
+        $("#contacto").fadeIn("fast");
+
+        //vaciamos las variables para que el formulario este limpio  
+        $("#name").val() = "";
+        $("#email").val() = "";
+        $("#tel").val() = "";
+        $("#mensaje").val() = "";
+    });
 });
