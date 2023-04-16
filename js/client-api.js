@@ -1,34 +1,3 @@
-$(document).ready(function () {
-    var $header = $('header');
-    var $div = $('header div');
-    var $nav = $('header nav');
-    var $a = $('header a');
-    var previousScroll = 0;
-    $(window).scroll(function (event) {
-        var scroll = $(this).scrollTop();
-        if (scroll > previousScroll && scroll > 600) {
-            $header.addClass('headerOnOff');
-            $header.removeClass('bgcolor');
-        } else {
-            $header.removeClass('headerOnOff');
-            if (scroll < previousScroll && scroll > 600) {
-                $header.addClass('bgcolor');
-                $div.fadeOut();
-                $nav.fadeOut();
-                $a.fadeOut();
-            }
-            if(scroll < previousScroll && scroll < 600){
-                $header.removeClass('bgcolor');
-                $div.fadeIn();
-                $nav.fadeIn();
-                $a.fadeIn();
-            }
-        }
-        previousScroll = scroll;
-    });
-
-});       
-
 function sendRequest() {
     $.ajax({
         url: 'https://api.openweathermap.org/data/2.5/weather?id=3433955&appid=3703eb6b830f455212008b6bf5b4a561&lang=es&units=metric',
