@@ -167,7 +167,7 @@
 
                 </div>
                 <div>
-                    <button type="button" class="form__button" id="enviar">Enviar</button>
+                    <button type="button" class="form__button" id="enviar">Siguiente</button>
                 </div>
             </form>
         </div>
@@ -175,10 +175,27 @@
 
     <section id="resumen">
         <div class="form">
-            <span class="form__title">Datos enviados correctamente</span>
+            <span class="form__title">¿Desea enviar estos datos?</span>
             <form id="form_resumen">
                 <div id="mostrar_resumen"></div>
-                <button type="button" id="botonAtras" class="form__button">Atras</button>
+                <div id="botonesResumen">
+                    <button type="button" id="botonAtras" class="form__button">Atras</button>
+                    <button type="button" id="botonEnviar" class="form__button">Enviar</button>
+                </div>
+            </form>
+            </form>
+        </div>
+    </section>
+
+    <section id="enviados">
+        <div class="form">
+            <span class="form__title">Datos Enviados Correctamente</span>
+            <form id="form_resumen">
+                <div id="mostrar_resumen"></div>
+                <div id="botonesResumen">
+                    <button type="button" id="botonAtras2" class="form__button">Volver</button>
+                </div>
+            </form>
             </form>
         </div>
     </section>
@@ -187,7 +204,6 @@
         <a href="#" class="botonFlotante">Volver al Inicio</a>
 
     </div>
-    <input type="button" value="Exportar PDF" id="botonPDF">
     <footer>
         <div id="mapa"><iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d90957.05563902196!2d-58.48468878293564!3d-34.60457907798242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses!2sar!4v1681136815416!5m2!1ses!2sar"
@@ -203,6 +219,7 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

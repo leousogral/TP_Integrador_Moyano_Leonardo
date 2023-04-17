@@ -50,14 +50,13 @@ $(document).ready(function () {
                 maxlength: "El mensaje debe tener menor a 300 caracteres"
             }
         },
-        success: function (span) {
-            span.addClass("validacionOK").text("!Correcto¡");
-        },
-        errorElement: 'span'
     });
 
     $("#resumen").hide();
+    $("#botonPDF").hide();
+
     var arrayServicios = [];
+
     $("#enviar").click(function () {
 
         if ($("#form_contact").valid() == false) {
@@ -72,33 +71,34 @@ $(document).ready(function () {
 
         arrayServicios = servicios;
 
-        $("#mostrar_resumen").html(`<strong>Servicios: </strong>${servicios}<br><br>
-                        <strong>Nombre: </strong>${name}<br><br>
-                        <strong>Email: </strong>${email}<br><br>
-                        <strong>Telefono: </strong>${tel}<br><br>
-                        <strong>Mensaje: </strong>${mensaje}`);
+        $("#mostrar_resumen").html("<strong>Servicios: </strong>" + servicios + "<br><br>" +
+                        "<strong>Nombre: </strong>" + name + "<br><br>" + 
+                        "<strong>Email: </strong>" + email + "<br><br>" + 
+                        "<strong>Telefono: </strong>" + tel + "<br><br>" + 
+                        "<strong>Mensaje: </strong>" + mensaje);
 
         $("#contacto").hide();
         $("#resumen").fadeIn("fast");
     });
 
-    //agregamos un evento click al boton "atras"      
     $("#botonAtras").click(function () {
 
-        //$("label.error").css("display", "none");
-
-        // ocultar el segundo formulario y  vuelve a mostrar el primero
         $("#resumen").hide();
         $("#contacto").fadeIn("fast");
 
-        //vaciamos las variables para que el formulario este limpio  
         $("#name").val() = "";
         $("#email").val() = "";
         $("#tel").val() = "";
         $("#mensaje").val() = "";
     });
 
-    $("#botonPDF").click(function () {
+    $("#botonAtras2").click(function () {
+
+        location.reload();
+    });
+
+    $("#enviados").hide();
+    $("#botonEnviar").click(function () {
 
         var name = $("#name").val();
         var email = $("#email").val();
@@ -108,7 +108,7 @@ $(document).ready(function () {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
-        doc.text("Datos de la consulta", 105, 10, "center");
+        doc.text("Datos de la consulta", 100, 10, "center");
         doc.text("Servicios: " + arrayServicios, 15, 30);
         doc.text("Nombre: " + name, 15, 50);
         doc.text("Email: " + email, 15, 70);
@@ -117,5 +117,14 @@ $(document).ready(function () {
 
         doc.save("consulta.pdf");
 
+        $("#botonEnviar").fadeOut('slow');
+        $("#resumen").fadeOut('slow');
+        $("#enviados").fadeIn('fast');
+        
+        $("#name").val() = '';
+        $("#email").val() = '';
+        $("#tel").val() = '';
+        $("#mensaje").val() = '';
     });
+    
 });
