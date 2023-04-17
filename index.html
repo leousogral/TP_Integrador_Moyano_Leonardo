@@ -23,6 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -186,6 +187,7 @@
         <a href="#" class="botonFlotante">Volver al Inicio</a>
 
     </div>
+    <input type="button" value="Exportar PDF" id="botonPDF">
     <footer>
         <div id="mapa"><iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d90957.05563902196!2d-58.48468878293564!3d-34.60457907798242!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!5e0!3m2!1ses!2sar!4v1681136815416!5m2!1ses!2sar"
@@ -201,44 +203,10 @@
         </div>
     </footer>
 
-    <script>
-        /*$(function () {
-            $ds = $('#firewal img');
-            $ds.hide().eq(0).show();
-            setInterval(function () {
-                $ds.filter(':visible').fadeOut(function () {
-                    var $div = $(this).next('img');
-                    if ($div.length == 0) {
-                        $ds.eq(0).fadeIn();
-                    } else {
-                        $div.fadeIn();
-                    }
-                });
-            }, 2000);
-        });
-
-        var textoMaq = document.getElementById('maquina');
-        console.log(textoMaq.textContent)
-        writing(textoMaq.textContent);
-
-        function writing(textoMaq) {
-            let text = textoMaq.toString();
-            let arrFromStr = text.split('');
-            let i = 0;
-            let printStr = setInterval(() => {
-                textoMaq.innerHTML += arrFromStr[i];
-                i++;
-
-                if(i === arrFromStr.length -1){
-                    clearInterval(printStr);
-                }
-            }, 500);
-        }*/
-
-    </script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="js/client-api.js"></script>
     <script src="js/form_contact.js"></script>
     <script src="js/scroll.js"></script>

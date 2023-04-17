@@ -57,19 +57,23 @@ $(document).ready(function () {
     });
 
     $("#resumen").hide();
-
+    var arrayServicios = [];
     $("#enviar").click(function () {
 
         if ($("#form_contact").valid() == false) {
             return;
         }
 
+        var servicios = $("#services").val();
         var name = $("#name").val();
         var email = $("#email").val();
         var tel = $("#tel").val();
         var mensaje = $("#mensaje").val();
 
-        $("#mostrar_resumen").html(`<strong>Nombre: </strong>${name}<br><br>
+        arrayServicios = servicios;
+
+        $("#mostrar_resumen").html(`<strong>Servicios: </strong>${servicios}<br><br>
+                        <strong>Nombre: </strong>${name}<br><br>
                         <strong>Email: </strong>${email}<br><br>
                         <strong>Telefono: </strong>${tel}<br><br>
                         <strong>Mensaje: </strong>${mensaje}`);
@@ -92,5 +96,26 @@ $(document).ready(function () {
         $("#email").val() = "";
         $("#tel").val() = "";
         $("#mensaje").val() = "";
+    });
+
+    $("#botonPDF").click(function () {
+
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var tel = $("#tel").val();
+        var mensaje = $("#mensaje").val();
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.text("Datos de la consulta", 105, 10, "center");
+        doc.text("Servicios: " + arrayServicios, 15, 30);
+        doc.text("Nombre: " + name, 15, 50);
+        doc.text("Email: " + email, 15, 70);
+        doc.text("Teléfono: " + tel, 15, 90);
+        doc.text("Mensaje: " + mensaje, 15, 110);
+
+        doc.save("consulta.pdf");
+
     });
 });
